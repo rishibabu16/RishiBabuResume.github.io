@@ -557,7 +557,6 @@ header .navbar ul li a:hover{
             <form action="" onsubmit="sendEmail(); reset(); return false;">
                 <input type="text" id="name" placeholder="Name" class="box" required>
                 <input type="text" id="subject" placeholder="Company Name" class="box" required>
-                <input type="text" id="number" placeholder="Phone No" class="box" required>
                 <textarea name="" id="body" cols="30" rows="10" placeholder="Message" class="box message" required></textarea>
                 <button type="submit" class="btn">Send <i class="fas fa-paper-plane"></i></button>
             </form>
@@ -611,23 +610,20 @@ printBtn.addEventListener('click', function(){
 function sendEmail(){
 let name = document.getElementById('name').value;
 let subject = document.getElementById('subject').value;
-let email = 'rishibabu7730@gmail.com';
 let body = document.getElementById('body').value;
-let number = document.getElementById('number').value;
 Email.send({
 Host : "smtp.elasticemail.com",
-Username : 'rishibabu7730@gmail.com',
+Username : "rishibabu7730@gmail.com",
 Password : "B4E5C4287851ADAA6F2BF3263CE80DBAAC4C",
 To : 'rishibabu9360443341@gmail.com',
-From : email,
+From : 'rishibabu7730@gmail.com',
 Subject : "Contact for Job Enquiry from "+subject+" by "+name,
-Body : "Name : "+name+"<br/> Contact Number : "+number+"<br/> "+body
+Body : "Name : "+name+"<br/><br/> "+body
 }).then(
 message => alert(message)
 );
 }
 
     </script>
-    <!--<script src="main.js"></script>-->
 </body>
 </html>
